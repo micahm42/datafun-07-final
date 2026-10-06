@@ -1,0 +1,79 @@
+# ============================================================
+
+# zensical.toml - datafun-07-final
+
+# ============================================================
+
+# Updated: 2026-10-06
+
+#
+
+# Documentation configuration for the datafun-07-final project.
+
+# Centralizes project documentation settings and API generation.
+
+[project]
+site_name = "Home Sales Analysis"
+site_url = "https://github.com/micahm42/datafun-07-final/"
+repo_url = "https://github.com/micahm42/datafun-07-final"
+repo_name = "datafun-07-final"
+site_description = "Home Sales Analysis - Exploratory Data Analysis and Linear Regression"
+docs_dir = "docs"
+site_dir = "site"
+edit_uri = "edit/main/docs/"
+extra_javascript = [
+"javascripts/read-aloud.js",
+"javascripts/concept-quiz.js",
+]
+
+[project.extra]
+social = [
+{icon = "fontawesome/brands/github", link = "https://github.com/micahm42/datafun-07-final" },
+]
+
+[project.markdown_extensions]
+md_in_html = {}
+pymdownx.superfences = {}
+
+# ------------------------------------------------------------
+
+# Plugins
+
+# ------------------------------------------------------------
+
+[project.plugins.mkdocstrings.handlers.python]
+paths = ["src"]
+
+[project.plugins.mkdocstrings.handlers.python.options]
+docstring_style = "google"
+show_source = true
+show_root_heading = true
+show_root_toc_entry = true
+show_signature_annotations = true
+separate_signature = true
+show_submodules = true
+
+[project.plugins.search]
+lang = "en"
+
+[project.theme]
+features = [
+"navigation.tracking",
+"navigation.expand",
+"navigation.path",
+"navigation.prune",
+"navigation.indexes",
+"toc.follow",
+"toc.integrate",
+"navigation.top",
+]
+
+# ------------------------------------------------------------
+
+# Navigation
+
+# ------------------------------------------------------------
+
+# If no explicit navigation is provided,
+
+# then folder-based navigation will be used automatically.

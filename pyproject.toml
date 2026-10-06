@@ -1,0 +1,101 @@
+# ============================================================
+# pyproject.toml - datafun-07-final
+# ============================================================
+# Updated: 2026-10-06
+# Python src/ project configuration.
+# This file is the single source of truth for project metadata,
+# dependencies, development tools, and build configuration.
+
+# ============================================================
+# SECTION 1: PROJECT IDENTITY
+# ============================================================
+
+[project]
+name = "datafun-07-final"
+readme = "README.md"
+requires-python = ">=3.14"
+version = "0.1.0"
+
+dependencies = [
+    "composable-data-core",
+    "datafun-toolkit",
+    "ml-vizkit",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+]
+
+[dependency-groups]
+
+dev = [
+    "pre-commit",
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "ty",
+]
+
+docs = [
+    "zensical",
+    "mkdocstrings[python]",
+]
+
+# ============================================================
+# SECTION 2: TOOL CONFIGURATION
+# ============================================================
+
+# === MARIMO REACTIVE NOTEBOOKS ===
+
+[tool.marimo.save]
+autosave = "after_delay"
+autosave_delay = 1000
+format_on_save = true
+
+[tool.marimo.package_management]
+manager = "uv"
+
+[tool.marimo.runtime]
+pythonpath = ["./src"]
+
+# === PYTEST ===
+
+[tool.pytest.ini_options]
+minversion = "9.0"
+testpaths = ["tests"]
+addopts = "--cov=src --cov-report=term-missing"
+filterwarnings = [
+    "ignore:FigureCanvasAgg is non-interactive, and thus cannot be shown:UserWarning",
+]
+
+# === RUFF ===
+
+[tool.ruff.lint]
+extend-select = []
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+
+[tool.ruff.lint.per-file-ignores]
+"src/**/__init__.py" = ["F401"]
+"src/**/_version.py" = ["ALL"]
+"tests/**/*.py" = ["D", "B018"]
+"notebooks/**/*.py" = ["D", "PLR1711", "RUF059"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+# === UV ===
+
+[tool.uv]
+default-groups = "all"
+
+# ============================================================
+# SECTION 3: BUILD SYSTEM
+# ============================================================
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/datafun"]

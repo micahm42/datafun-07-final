@@ -1,0 +1,55 @@
+# ============================================================
+# CITATION.cff (How to cite this project)
+# ============================================================
+
+# REQ.UNIVERSAL: Professional open projects SHOULD include this file.
+# WHY: Support correct citation and attribution.
+# ALT: Internal or private repositories may omit citation metadata.
+# CUSTOM: Update author, repository, license, and keyword fields as needed.
+# USAGE: See https://citation-file-format.github.io/ for details.
+
+cff-version: "1.2.0"
+message: "If using this work, please cite it as described in this file."
+type: software
+
+title: "datafun-07-final - Home Sales Analysis"
+version: "0.1.0"
+date-released: "2026-10-06"
+
+authors:
+  - family-names: Manuel
+    given-names: Micah H.
+    affiliation: "Northwest Missouri State University, School of Computer Science and Information Systems, Maryville, MO, USA"
+
+repository-code: "https://github.com/micahm42/datafun-07-final"
+url: "https://github.com/micahm42/datafun-07-final"
+license: MIT
+
+abstract: >
+  Home sales data analytics project using Python for exploratory data
+  analysis and linear regression. The project examines relationships
+  among home price, square footage, bedrooms, bathrooms, year built,
+  neighborhood, property type, and satisfaction. The analysis includes
+  data preparation, exploratory visualization, correlation analysis,
+  baseline comparison, linear regression modeling, model evaluation,
+  residual analysis, and communication of findings through a
+  reproducible professional workflow.
+
+keywords:
+  - home-sales
+  - data-analytics
+  - exploratory-data-analysis
+  - data-visualization
+  - machine-learning
+  - predictive-analytics
+  - linear-regression
+  - regression
+  - supervised-learning
+  - model-evaluation
+  - residual-analysis
+  - scikit-learn
+  - pandas
+  - matplotlib
+  - python
+  - reproducible-workflows
+  - data-analytics-education
