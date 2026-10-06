@@ -1,43 +1,111 @@
 # Project-Specific Instructions
 
-## Phase 4: First Technical Modification
+## Home Sales Analysis
 
-Make one small technical change.
-Run the project again and see what happens.
-If your change causes an error, read the message, correct the problem,
-and rerun the project.
-You can always revert (CTRL z) changes or return to the example code.
-Follow this debugging process
-until your initial technical modification runs successfully.
+This project analyzes residential home sales data using Python. The analysis includes exploratory data analysis, data visualization, correlation analysis, linear regression, model evaluation, residual analysis, and an extended regression model.
 
-Suggestions:
+### How to Run the Project
 
-## More About Phase 5
+From the project root directory, run:
 
-Follow the instructions linked above to complete **Phase 5**
-and apply the techniques to solve a novel problem.
+```powershell
+uv run python -m datafun.home_sales
+```
 
-Implement a custom project based on the example.
+The program will:
 
-Keep the working example and your custom code in the repository
-together until your work has been assessed.
+1. Load the home sales dataset from `data/raw/home_sales.csv`.
+2. Perform exploratory data analysis.
+3. Generate analysis charts in `docs/home_sales/images/`.
+4. Train and evaluate linear regression models.
+5. Compare the primary and extended regression models.
+6. Generate the HTML analysis report.
+7. Open the report in the default web browser.
 
-After your work has been assessed, you may remove the working example and
-tailor your custom project as you like.
+### View the Report
 
-## Professional Communication
+The generated report is located at:
 
-Make sure your repository correctly presents and reflects **your work**.
-Remove educational instructions that are no
-longer needed and verify key areas **showcase your skills**:
+```text
+docs/home_sales/index.html
+```
 
-- README.md
-- docs/
-- src/
+The report presents the project findings, visualizations, regression results, model evaluation, and conclusions.
 
-The example projects are MIT licensed.
-You are free to use and modify as you like.
+### Run Project Checks
 
----
+The project includes automated code-quality and testing tools.
 
-[◄ Back to Home](index.md)
+Run Ruff:
+
+```powershell
+uv run ruff check .
+```
+
+Run the type checker:
+
+```powershell
+uv run ty check
+```
+
+Run the tests:
+
+```powershell
+uv run pytest
+```
+
+### Build the Documentation
+
+To build the project documentation:
+
+```powershell
+uv run python -m zensical build
+```
+
+To preview the documentation locally:
+
+```powershell
+uv run python -m zensical serve
+```
+
+The local documentation server is typically available at:
+
+```text
+http://127.0.0.1:8000
+```
+
+Press **Ctrl+C** in the PowerShell window to stop the documentation server.
+
+## Project Organization
+
+The primary project files are organized as follows:
+
+```text
+data/
+└── raw/
+    └── home_sales.csv
+
+docs/
+└── home_sales/
+    ├── index.html
+    ├── assets/
+    └── images/
+
+src/
+└── datafun/
+    ├── home_sales.py
+    ├── home_sales_eda.py
+    ├── home_sales_regression.py
+    └── home_sales_report.py
+
+tests/
+└── test_app.py
+```
+
+The main entry point is:
+
+```text
+src/datafun/home_sales.py
+```
+
+The project uses a reproducible workflow that separates data loading, exploratory analysis, regression modeling, reporting, and testing.
